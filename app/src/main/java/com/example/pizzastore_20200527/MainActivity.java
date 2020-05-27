@@ -36,7 +36,11 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                PizzaStore pizzaStore = pizzaStoreList.get(position);
+
                 Intent myintent = new Intent(mContxt,PizzaStoreDetailActivity.class);
+                myintent.putExtra("store", pizzaStore);
+                startActivity(myintent);
 
             }
         });
