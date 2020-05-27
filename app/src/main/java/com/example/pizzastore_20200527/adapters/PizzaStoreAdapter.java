@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +40,14 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore> {
         if(row == null){
             row = inf.inflate(R.layout.pizza_store_list_item,null);
         }
+
+        ImageView storeLogoImg = row.findViewById(R.id.storeLogoImg);
+        TextView storeNameTxt = row.findViewById(R.id.storeNameTxt);
+
+        PizzaStore data = mList.get(position);
+
+        storeNameTxt.setText(data.getName());
+
         return row;
 
     }
