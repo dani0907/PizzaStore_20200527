@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.pizzastore_20200527.R;
 import com.example.pizzastore_20200527.datas.PizzaStore;
 
@@ -47,6 +48,8 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore> {
         PizzaStore data = mList.get(position);
 
         storeNameTxt.setText(data.getName());
+
+        Glide.with(mContext).load(data.getLogoImgUrl()).into(storeLogoImg);
 
         return row;
 
