@@ -1,0 +1,2 @@
+rootProject.name='PizzaStore_20200527'
+include ':app'
